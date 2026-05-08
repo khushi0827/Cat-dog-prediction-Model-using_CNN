@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog vs Cat Classifier</title>
+
+<!
+-Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"&gt;
+<!
+-Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap&quot; rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(135deg, #6a11cb, #2575fc);
+padding: 20px;
+}
+
+.container {
+background: rgba(255, 255, 255, 0.12);
+backdrop-filter: blur(15px);
+border-radius: 25px;
+padding: 40px;
+width: 100%;
+max-width: 550px;
+text-align: center;
+color: white;
+box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+border: 1px solid rgba(255,255,255,0.2);
+}
+
+.header-icon {
+font-size: 70px;
+margin-bottom: 15px;
+color: #ffd700;
+animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+}
+
+h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+font-weight: 700;
+}
+
+p {
+font-size: 1rem;
+margin-bottom: 25px;
+color: #f1f1f1;
+}
+
+.upload-box {
+border: 2px dashed rgba(255,255,255,0.6);
+border-radius: 20px;
+padding: 30px;
+margin-bottom: 25px;
+transition: 0.3s;
+cursor: pointer;
+}
+
+.upload-box:hover {
+background: rgba(255,255,255,0.1);
+transform: scale(1.02);
+}
+
+.upload-box i {
+font-size: 50px;
+margin-bottom: 15px;
+color: #ffffff;
+}
+
+input[type="file"] {
+display: none;
+}
+
+.btn {
+display: inline-block;
+background: #ffd700;
+color: #333;
+padding: 14px 35px;
+border: none;
+border-radius: 50px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+text-decoration: none;
+}
+
+.btn:hover {
+background: white;
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.features {
+display: flex;
+justify-content: space-around;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+.feature {
+margin: 10px;
+}
+
+.feature i {
+font-size: 28px;
+color: #ffd700;
+margin-bottom: 8px;
+}
+
+.feature p {
+font-size: 0.9rem;
+margin: 0;
+}
+
+footer {
+margin-top: 25px;
+font-size: 0.8rem;
+color: #ddd;
+}
+
+@media(max-width: 600px) {
+h1 {
+font-size: 2rem;
+}
+
+.container {
+padding: 25px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="header-icon">
+<i class="fas fa-paw"></i>
+</div>
+
+<h1>Dog 🐶 vs Cat 🐱 Classifier</h1>
+<p>Upload your image and let AI predict whether it’s a Dog or a Cat instantly!</p>
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+<label for="file-upload" class="upload-box">
+<i class="fas fa-cloud-upload-alt"></i>
+<h3>Click to Upload Image</h3>
+<p>JPG, PNG, JPEG Supported</p>
+</label>
+<input id="file-upload" type="file" name="file" required>
+
+<br><br>
+
+<button type="submit" class="btn">
+<i class="fas fa-search"></i> Predict Now
+</button>
+</form>
+
+<div class="features">
+<div class="feature">
+<i class="fas fa-bolt"></i>
+<p>Fast Prediction</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-brain"></i>
+<p>AI Powered</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-image"></i>
+<p>Image Analysis</p>
+</div>
+</div>
+
+<footer>
+Built with ❤️ using Flask & Deep Learning
+</footer>
+</div>
+
+</body>
+</html>
